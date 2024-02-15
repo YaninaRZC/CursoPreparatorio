@@ -1,0 +1,7 @@
+*Variables: "cajas" con info para usar luego.
+* Strings: bloques de texto, va entre comillas
+* Funciones (argumentos, `return`): agrupan datos que puedo usar nombrandolas. 
+Los argumentos van entre parentesis luego del nombre y dan informacion a la funcion.
+Return finaliza la ejecución de la función y especifica un valor para ser devuelto a quien llama a la función.
+* Declaraciones `if` sirven para control de flujo, significa "si" si pasa tal argumento aplica tal accion, verifica si algo es true y aplica el codigo, o avanza si no lo es 
+* Valores booleanos (`true`, `false`)tiene 2 posibles valores: true (verdadero) o false (falso).
