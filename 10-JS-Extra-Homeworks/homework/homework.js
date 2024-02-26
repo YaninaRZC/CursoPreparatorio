@@ -10,6 +10,7 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  return Object.entries(objeto);
 }
 
 
@@ -18,6 +19,15 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  const charCount = {};
+  for (const char of string) {
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+  return charCount;
 }
 
 
@@ -26,6 +36,19 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let uppercase = '';
+  let lowercase = '';
+
+  // Separar las letras mayúsculas y minúsculas
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === s[i].toUpperCase()) {
+      uppercase += s[i];
+    } else {
+      lowercase += s[i];
+    }
+  }
+  // Devolver las letras mayúsculas al principio seguidas de las minúsculas
+  return uppercase + lowercase;
 }
 
 
@@ -35,15 +58,32 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
+ // Dividir la cadena en palabras individuales
+ let words = str.split(' '); 
+ // Invertir cada palabra
+ let mirroredWords = words.map(e => {
+   return e.split('').reverse().join('');
+ });
+ // Unir las palabras invertidas para formar la nueva cadena
+ let mirroredString = mirroredWords.join('');
+ return mirroredString;
+}
 
 
 function capicua(numero){
   //Escribe una función, la cual recibe un número y determina si es o no capicúa.
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
-  //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
+  //izquierda a derecha que de derecha a izquierda. Caso contrario retorna 
   //Escribe tu código aquí
-}
+   // Convertir el número a cadena para poder usar el método reverse
+   let numeroStr = numero.toString();
+
+   // Convertir la cadena en un array, revertirla y luego unirla de nuevo
+   let numeroReverso = numeroStr.split('').reverse().join('');
+ 
+   // Verificar si el número original es igual al número revertido
+   return numeroStr === numeroReverso ? "Es capicua" : "No es capicua";
+  } 
 
 
 function deleteAbc(cadena){
